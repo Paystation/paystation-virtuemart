@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="3.0" type="plugin" group="vmpayment" method="upgrade">
+    <name>VM - Payment, Paystation</name>
+    <creationDate>July 03 2019</creationDate>
+    <author>support@paystation.co.nz</author>
+    <authorUrl>https://www2.paystation.co.nz</authorUrl>
+    <copyright>Copyright (C) 2015 Face Ltd. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+    <version>3.4.2</version>
+    <description>Paystation payment plugin</description>
+
+    <languages>
+        <language tag="en-GB">en-GB.plg_vmpayment_paystation.ini</language>
+        <language tag="en-US">en-GB.plg_vmpayment_paystation.ini</language>
+        <language tag="en-AU">en-GB.plg_vmpayment_paystation.ini</language>
+        <language tag="en-NZ">en-GB.plg_vmpayment_paystation.ini</language>
+    </languages>
+
+    <files>
+        <filename plugin="paystation">paystation.php</filename>
+    </files>
+
+    <vmconfig>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/administrator/components/com_virtuemart/fields">
+                <field name="paystation_id" type="text" default="" label="VMPAYMENT_PAYSTATION_ID"
+                       description="VMPAYMENT_PAYSTATION_ID_DESC"/>
+                <field name="paystation_gateway" type="text" default="" label="VMPAYMENT_PAYSTATION_GATEWAY"
+                       description="VMPAYMENT_PAYSTATION_GATEWAY_DESC"/>
+                <field name="paystation_hmac" type="text" default="" label="VMPAYMENT_PAYSTATION_HMAC"
+                       description="VMPAYMENT_PAYSTATION_GATEWAY_DESC"/>
+                <field name="is_test" type="radio" default="1" label="VMPAYMENT_PAYSTATION_LIVE"
+                       description="VMPAYMENT_PAYSTATION_LIVE_DESC">
+                    <option value="1">COM_VIRTUEMART_NO</option>
+                    <option value="0">COM_VIRTUEMART_YES</option>
+                </field>
+                <field name="postback_enabled" type="radio" default="1" label="VMPAYMENT_PAYSTATION_POSTBACK">
+                    <option value="0">COM_VIRTUEMART_NO</option>
+                    <option value="1">COM_VIRTUEMART_YES</option>
+                </field>
+
+                <field name="cost_per_transaction" type="text" label="VMPAYMENT_PAYSTATION_COST_PER_TRANSACTION"
+                       description="VMPAYMENT_PAYSTATION_COST_PER_TRANSACTION_DESC"/>
+                <field name="cost_percent_total" type="text" label="VMPAYMENT_PAYSTATION_COST_PERCENT_TOTAL"
+                       description="VMPAYMENT_PAYSTATION_COST_PERCENT_TOTAL_DESC"/>
+            </fieldset>
+        </fields>
+    </vmconfig>
+</extension>
