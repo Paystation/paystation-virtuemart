@@ -192,7 +192,7 @@ class plgVmPaymentPaystation extends vmPSPlugin
 
             // if the payment is successful change status, clear cart send emails
             // otherwise do nothing and order remains as pending
-            if ($xml->ec == 0) {
+            if ($xml->ec == '0') {
                 $success = true;
             }
         } else {
